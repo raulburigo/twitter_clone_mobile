@@ -5,9 +5,11 @@ import './storybook.requires';
 const Storybook = getStorybookUI({
   //@ts-ignore
   asyncStorage: AsyncStorage,
-	onDeviceUI: false,
-	disableWebsockets: true,
-	shouldPersistSelection: true,
+  port: 7007,
+  host: '0.0.0.0',
+	onDeviceUI: true,
+	// disableWebsockets: true,
+	// shouldPersistSelection: true,
 });
 
 export default Storybook;

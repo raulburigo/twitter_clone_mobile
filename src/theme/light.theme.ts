@@ -1,11 +1,11 @@
 export default {
   colors: {
     accent: '#1D9BF0',
-    primary: '#15202B',
+    primary: '#fff',
     secondary: {
-      1: '#8b98a5',
+      1: '#0f1419',
       2: '#273340',
-      3: '#f7f9f9',
+      3: '#536471',
     },
   },
 };

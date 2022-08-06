@@ -1,14 +1,24 @@
-import React from 'react';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
+import React, {useCallback} from 'react';
 import {View, Button, Text, StyleSheet} from 'react-native';
+import Tweet from '../components/Tweet';
 
-const Home: React.FC<any> = ({navigation}) => {
+const Home: React.FC = () => {
+  const navigation = useNavigation();
+
+  useFocusEffect(
+    useCallback(() => {
+      const tabNav = navigation.getParent();
+      const drawerNav = tabNav?.getParent();
+      drawerNav?.setOptions({swipeEnabled: true});
+      return () => drawerNav?.setOptions({swipeEnabled: false});
+    }, [navigation]),
+  );
+
   return (
     <View style={styles.center}>
-      <Text>This is the home screen</Text>
-      <Button
-        title="Go to About Screen"
-        onPress={() => navigation.navigate('About')}
-      />
+      <Tweet />
+      <Tweet />
     </View>
   );
 };

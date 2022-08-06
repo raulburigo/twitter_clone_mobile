@@ -17,4 +17,4 @@ const App = () => {
   );
 };
 
-export default Config.LOAD_STORYBOOK === 'true' ? Storybook : App;
+export default /* Config.LOAD_STORYBOOK === 'true' ? Storybook : */ App;
