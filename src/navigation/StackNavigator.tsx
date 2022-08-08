@@ -10,6 +10,8 @@ import Profile from '../screens/Profile';
 import Connections from '../screens/Connections';
 import Feed from '../screens/Feed';
 import {DefaultTheme, useTheme} from 'styled-components';
+import Home from '../screens/Auth/Home';
+import Username from '../screens/Auth/Username';
 
 const Stack = createStackNavigator();
 
@@ -44,4 +46,15 @@ const ContactStackNavigator = () => {
   );
 };
 
-export {MainStackNavigator, ContactStackNavigator};
+const AuthStack = () => {
+  const theme = useTheme();
+
+  return (
+    <Stack.Navigator screenOptions={screenOptionStyle(theme)}>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Username" component={Username} />
+    </Stack.Navigator>
+  );
+};
+
+export {MainStackNavigator, ContactStackNavigator, AuthStack};
